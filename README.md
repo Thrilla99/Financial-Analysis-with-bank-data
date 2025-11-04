@@ -1,105 +1,108 @@
-# Financial-Analysis-with-bank-data
-Preforming analysis with simulated banking data, sourced from Kaggle  (https://www.kaggle.com/datasets/computingvictor/transactions-fraud-datasets/code)
+# Banking Customer and Credit Risk Analysis (Power BI)
 
+## Overview
+This Power BI project explores customer spending behavior, merchant activity, and credit risk patterns using a synthetic banking dataset.  
+It includes five dashboards designed to provide a layered view of customer and business insights.
 
-Banking Customer and Credit Risk Analysis (Power BI Project)
-Overview
+### Dashboards Included
+1. **Executive Overview** – overall business performance  
+2. **User Dashboard** – customer demographics and spending  
+3. **Merchants Dashboard** – merchant activity and refund performance  
+4. **Card Type and Transactions** – analysis of debit, credit, and prepaid card performance  
+5. **Credit Risk View** – relationship between credit score, spending, and refunds  
 
-This project analyzes customer, transaction, and card data from a simulated financial institution.
-The goal was to uncover trends in spending, refund behavior, and credit risk across different customer and card segments.
-Using Power BI, I built a data model connecting multiple datasets and designed five interactive dashboards to visualize business insights clearly and effectively.
+---
 
-Objectives
+## Executive Overview
+![Executive Overview](./Exec_OverView.png)
 
-Understand overall customer and transaction performance.
+This page provides high-level metrics such as total transactions, total spend, and average credit score.  
+It highlights that:
+- Most spending comes from **regular transactions** rather than high-value ones.  
+- Debit outflows dominate over credit inflows.  
+- The majority of customers fall into the **low or medium credit tier** group.
 
-Identify spending and refund patterns by card type and credit group.
+---
 
-Evaluate merchant performance and transaction concentration.
+## User Dashboard
+![User Dashboard](./User_Dash.png)
 
-Segment customers by credit score to assess credit risk exposure.
+Key insights:
+- Younger users (ages 18–42) account for a major share of spending.  
+- **Low credit-tier** users spend significantly more overall.  
+- Males and females have similar average spend values, suggesting spending behavior is not gender-biased.  
+- Birth months show relatively consistent spending patterns throughout the year.
 
-Build a data-driven foundation for improving financial decision-making.
+---
 
-Data Preparation
+## Merchants Dashboard
+![Merchants](./Merchants.png)
 
-Cleaned and standardized columns (renamed headers, removed nulls, corrected data types).
+This page ranks merchants by **total spend** and visualizes refund rates by merchant.  
+Key observations:
+- A small group of merchants generates a large portion of the total transaction value.  
+- Refund rates are consistent (around 5 %), but a few top merchants account for a higher refund volume.
 
-Created calculated columns such as:
+---
 
-Month Name and Year for time analysis.
+## Card Type and Transactions
+![Card Type and Transactions](./Card_Type.png)
 
-Flow Type to separate inflow and outflow transactions.
+Insights:
+- **Debit cards** contribute the largest total spend and transaction count.  
+- **Credit cards** show slightly lower overall spending but stable usage.  
+- **Prepaid cards** have minimal activity, likely used for smaller or limited transactions.
 
-Credit Risk Group (Very Low to Very High) based on credit score ranges.
+---
 
-Built DAX measures for metrics including:
+## Credit Risk View
+![Credit Risk View](./Credit_Risk.png)
 
-Total Spend
+This dashboard connects spending and refund rates with customer credit score segments.  
+Findings:
+- Customers with **very low (subprime)** credit scores have the **highest refund rate**, around 6 %.  
+- Spending volume increases steadily with higher credit tiers.  
+- Debit cards show the highest refund values across all risk groups.
 
-Total Refunds
+---
 
-Refund Rate %
+## Key Metrics Summary
+| Metric | Value |
+|--------|-------|
+| **Total Spend** | $572 M |
+| **Total Refunds** | $68 M |
+| **Average Spend per User** | $286 K |
+| **Refund Rate (safe)** | 5 % |
+| **Highest Spending Group** | Very High Credit Score |
+| **Highest Refund Rate** | Very Low Credit Score (Subprime) |
 
-Average Spend per User
+---
 
-High Credit Tier segmentation
+## Technical Details
+- Built and modeled in **Power BI Desktop**
+- Data cleaning and transformation in **Power Query**
+- Key calculated columns:
+  - `Flow Type` (Credit / Debit)
+  - `Month Name` and `Year`
+  - `Credit Risk Group` (based on Credit Score)
+- Measures created:
+  - `Total Spend`
+  - `Total Refunds`
+  - `Average Spend per User`
+  - `Refund Rate (%)`
 
-Dashboards Created
-1. Executive Overview
+---
 
-Provides a high-level summary of total transactions, users, spending volume, average spend, and credit score trends.
-Includes visuals for spending by credit tier and transaction type to show overall customer and financial health.
+## Files in Repository
+- `Exec_OverView.png` – Executive Overview  
+- `User_Dash.png` – User Dashboard  
+- `Merchants.png` – Merchants Dashboard  
+- `Card_Type.png` – Card Type and Transactions  
+- `Credit_Risk.png` – Credit Risk Dashboard  
+- `README.md` – this documentation  
 
-2. User Dashboard
+---
 
-Explores customer demographics and behavior, including age range, gender differences, and spending distribution by credit tier and birth month.
-
-3. Merchants Dashboard
-
-Highlights top merchants by transaction volume and spending concentration.
-Shows refund rate and merchant-level performance to identify dependency on high-volume partners.
-
-4. Card Type and Transactions
-
-Compares total spending and transaction volume between Credit, Debit, and Prepaid cards.
-Reveals that debit cards contribute the highest total spend but also carry higher refund activity.
-
-5. Credit Risk View
-
-Assesses customer reliability by segmenting users into credit risk groups.
-Displays total spend, refund rate, and refund volume by both credit group and card type to identify high-risk customer segments.
-
-Key Insights
-
-Total spend across all customers: $572M
-
-Total refunds: $68M, representing an average refund rate of 5%
-
-High and Very High credit score customers account for the largest share of total spend but maintain lower refund rates (around 4%).
-
-Subprime and low-score groups have smaller spending shares but higher refund behavior, indicating elevated financial risk.
-
-Debit card users drive the majority of spending but are also linked to the highest refund amounts.
-
-Merchant 27092 shows the largest transaction concentration, suggesting a potential reliance risk on specific merchants.
-
-Business Recommendations
-
-Maintain focus on medium- and high-credit customers who deliver consistent spending with low refund rates.
-
-Implement stronger refund policies and monitoring for debit card users and low-credit groups.
-
-Diversify merchant partnerships to reduce overexposure to a small number of high-volume accounts.
-
-Develop retention programs for reliable customers with high spend and strong credit histories.
-
-Tools and Skills
-
-Power BI for dashboard design and data modeling.
-
-Power Query for data transformation and cleaning.
-
-DAX for calculated columns and key performance measures.
-
-Data Analytics Concepts: financial segmentation, credit risk scoring, and refund analysis.
+## About
+This project demonstrates how Power BI can be used to translate transactional banking data into clear insights about customer behavior, merchant performance, and credit risk patterns.  
+It can serve as a foundation for more advanced analytics such as churn prediction or credit scoring models.
